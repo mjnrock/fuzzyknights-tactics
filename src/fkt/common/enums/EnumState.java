@@ -1,4 +1,4 @@
-package fkt.enums;
+package fkt.common.enums;
 
 public enum EnumState {
 	NORMAL,		// The default behavior of the Entity

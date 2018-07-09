@@ -1,11 +1,11 @@
-package fkt.system;
+package fkt.common.system;
 
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-import fkt.component.AComponent;
-import fkt.entity.AEntity;
-import fkt.enums.EnumComponentType;
+import fkt.common.component.AComponent;
+import fkt.common.entity.AEntity;
+import fkt.common.enums.EnumComponentType;
 
 public class SystemEntity {
 	private static final SystemEntity INSTANCE = new SystemEntity();

@@ -1,4 +1,4 @@
-package fkt.enums;
+package fkt.common.enums;
 
 public enum EnumComponentType {
 	NAME,

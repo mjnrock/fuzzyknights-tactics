@@ -1,6 +1,6 @@
-package fkt.component;
+package fkt.common.component;
 
-import fkt.enums.EnumComponentType;
+import fkt.common.enums.EnumComponentType;
 
 public class ComponentName extends AComponent {
 	public String Nomen;

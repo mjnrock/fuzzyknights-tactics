@@ -1,11 +1,11 @@
-package fkt.component;
+package fkt.common.component;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import fkt.enums.EnumComponentType;
-import fkt.enums.EnumState;
-import fkt.exceptions.InvalidStateDurationException;
-import fkt.system.SystemState;
+import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumState;
+import fkt.common.exceptions.InvalidStateDurationException;
+import fkt.common.system.SystemState;
 
 public class ComponentState extends AComponent {
 	public EnumState DefaultState = EnumState.NORMAL;

@@ -1,11 +1,11 @@
-package fkt.entity;
+package fkt.common.entity;
 
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-import fkt.component.AComponent;
-import fkt.enums.EnumComponentType;
-import fkt.system.SystemEntity;
+import fkt.common.component.AComponent;
+import fkt.common.enums.EnumComponentType;
+import fkt.common.system.SystemEntity;
 
 public abstract class AEntity {
 	public UUID UUID;

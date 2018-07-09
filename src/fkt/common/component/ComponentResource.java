@@ -1,7 +1,7 @@
-package fkt.component;
+package fkt.common.component;
 
-import fkt.enums.EnumComponentType;
-import fkt.enums.EnumResourceType;
+import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumResourceType;
 
 public class ComponentResource extends AComponent {
 	public EnumResourceType ResourceType;

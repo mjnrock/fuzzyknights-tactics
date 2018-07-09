@@ -1,8 +1,8 @@
-package fkt.system;
+package fkt.common.system;
 
-import fkt.component.ComponentName;
-import fkt.entity.AEntity;
-import fkt.enums.EnumComponentType;
+import fkt.common.component.ComponentName;
+import fkt.common.entity.AEntity;
+import fkt.common.enums.EnumComponentType;
 
 public class SystemName {
 	private static final SystemName INSTANCE = new SystemName();

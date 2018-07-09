@@ -1,6 +1,6 @@
-package fkt.component;
+package fkt.common.component;
 
-import fkt.enums.EnumComponentType;
+import fkt.common.enums.EnumComponentType;
 
 public abstract class AComponent {
 	protected EnumComponentType ComponentType;

@@ -1,4 +1,4 @@
-package fkt.exceptions;
+package fkt.common.exceptions;
 
 import java.text.MessageFormat;
 

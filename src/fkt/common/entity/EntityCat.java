@@ -1,11 +1,11 @@
-package fkt.entity;
+package fkt.common.entity;
 
-import fkt.component.AComponent;
-import fkt.component.ComponentAttributes;
-import fkt.component.ComponentHealth;
-import fkt.component.ComponentName;
-import fkt.component.ComponentResource;
-import fkt.component.ComponentState;
+import fkt.common.component.AComponent;
+import fkt.common.component.ComponentAttributes;
+import fkt.common.component.ComponentHealth;
+import fkt.common.component.ComponentName;
+import fkt.common.component.ComponentResource;
+import fkt.common.component.ComponentState;
 
 public class EntityCat extends AEntity {
 	public EntityCat(String name) {

@@ -2,10 +2,10 @@ package fkt;
 
 import java.util.concurrent.TimeUnit;
 
-import fkt.entity.EntityCat;
-import fkt.enums.EnumState;
-import fkt.exceptions.InvalidStateDurationException;
-import fkt.system.SystemState;
+import fkt.common.entity.EntityCat;
+import fkt.common.enums.EnumState;
+import fkt.common.exceptions.InvalidStateDurationException;
+import fkt.common.system.SystemState;
 import fkt.utility.Helper;
 
 public class FuzzyKnights {

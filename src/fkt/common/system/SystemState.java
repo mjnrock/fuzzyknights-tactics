@@ -1,13 +1,13 @@
-package fkt.system;
+package fkt.common.system;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import fkt.component.ComponentState;
-import fkt.entity.AEntity;
-import fkt.enums.EnumComponentType;
-import fkt.enums.EnumState;
-import fkt.exceptions.InvalidStateDurationException;
+import fkt.common.component.ComponentState;
+import fkt.common.entity.AEntity;
+import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumState;
+import fkt.common.exceptions.InvalidStateDurationException;
 
 public class SystemState {
 	private static final SystemState INSTANCE = new SystemState();

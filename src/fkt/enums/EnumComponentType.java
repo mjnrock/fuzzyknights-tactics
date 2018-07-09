@@ -5,7 +5,8 @@ public enum EnumComponentType {
 	ATTRIBUTES,
 	HEALTH,
 	RESOURCE,
-	STATE;
+	STATE,
+	AI;
 	
 	public int GetFlag() {
 		return 1 << this.ordinal();

@@ -26,12 +26,12 @@ public class SystemStateTests {
 	}	
 	
 	@Rule
-	public ExpectedException NoExpectedExceptions = ExpectedException.none();	
+	public ExpectedException expectedEx = ExpectedException.none();	
 
     @Test
     public void InvalidStateDuration() throws InvalidStateDurationException {
 		//	SystemState > SetState does not allow bad duration entries
-    	NoExpectedExceptions.expect(InvalidStateDurationException.class);
+    	expectedEx.expect(InvalidStateDurationException.class);
 		SystemState.GetInstance().SetState(Entity, EnumState.CASTING, 0);
 		SystemState.GetInstance().SetState(Entity, EnumState.CASTING, -16511);
 	}

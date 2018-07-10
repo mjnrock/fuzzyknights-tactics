@@ -4,7 +4,7 @@ public enum EnumComponentType {
 	NAME,
 	ATTRIBUTES,
 	HEALTH,
-	RESOURCE,
+	RESOURCES,
 	STATE,
 	AI;
 	

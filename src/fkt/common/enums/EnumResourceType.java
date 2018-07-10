@@ -1,6 +1,7 @@
 package fkt.common.enums;
 
 public enum EnumResourceType {
+	HP,
 	MANA;
 	
 	public int GetFlag() {

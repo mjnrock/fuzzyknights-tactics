@@ -13,6 +13,16 @@ public class Helper {
 		return Math.round(value * Math.pow(10, places)) / Math.pow(10, places); 
 	}
 	
+	public static double clamp(double current, double min, double max) {
+		if(current >= max) {
+			return max;
+		} else if(current <= min) {
+			return min;
+		}
+		
+		return current;
+	}
+	
 	public static <T> T coalesce(T a, T b) {
 	    return a == null ? b : a;
 	}

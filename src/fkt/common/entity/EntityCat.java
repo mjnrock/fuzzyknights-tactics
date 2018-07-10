@@ -18,8 +18,7 @@ public class EntityCat extends AEntity {
 				{ EnumAttributeType.TOUGHNESS, 1 },
 				{ EnumAttributeType.POWER, 2 },
 				{ EnumAttributeType.RESISTANCE, 3 }
-			}),
-			
+			}),			
 			new ComponentState()
 		});
 	}

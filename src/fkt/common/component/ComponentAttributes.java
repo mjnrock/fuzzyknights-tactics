@@ -2,9 +2,9 @@ package fkt.common.component;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import fkt.common.component.structs.Value;
-import fkt.common.component.structs.BoundedValue;
 import fkt.common.enums.EnumComponentType;
+import fkt.utility.BoundedValue;
+import fkt.utility.Value;
 import fkt.common.enums.EnumAttributeType;
 
 public class ComponentAttributes extends AComponent {

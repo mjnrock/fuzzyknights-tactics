@@ -1,7 +1,6 @@
-package fkt.common.component.structs;
+package fkt.utility;
 
 import fkt.common.enums.EnumAttributeType;
-import fkt.utility.Helper;
 
 public class BoundedValue extends Value {
 	public double Min;

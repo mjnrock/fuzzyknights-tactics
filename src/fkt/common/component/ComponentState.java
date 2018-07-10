@@ -8,7 +8,7 @@ import fkt.common.exceptions.InvalidStateDurationException;
 import fkt.common.system.SystemState;
 
 public class ComponentState extends AComponent {
-	public EnumState DefaultState = EnumState.NORMAL;
+	public EnumState DefaultState;
 	public ConcurrentHashMap<EnumState, Long> States = new ConcurrentHashMap<EnumState, Long>();
 	
 	public ComponentState() {

@@ -15,8 +15,23 @@ public class SystemState {
 
 	public static final long DURATION_MAX = 3600000;	// 1hr in milliseconds
 	
+	public boolean HasComponent(AEntity entity) {
+		return SystemEntity.GetInstance().GetComponents(entity).containsKey(SystemState.COMPONENT_TYPE);
+	}
 	public ComponentState GetComponent(AEntity entity) {
 		return (ComponentState)SystemEntity.GetInstance().GetComponent(entity, SystemState.COMPONENT_TYPE);
+	}
+	public SystemState AddComponent(AEntity entity, ComponentState state) {
+		if(!this.HasComponent(entity)) {
+			SystemEntity.GetInstance().GetComponents(entity).put(state.GetComponentType(), state);
+		}
+		
+		return this;
+	}
+	public SystemState SetComponent(AEntity entity, ComponentState state) {
+		SystemEntity.GetInstance().GetComponents(entity).put(state.GetComponentType(), state);
+		
+		return this;
 	}
 	
 
@@ -52,7 +67,7 @@ public class SystemState {
 			throw new InvalidStateDurationException(duration);
 		}
 		
-		this.GetComponent(entity).States.put(state, expiration);
+		this.SetExpiration(entity, state, expiration);
 		
 		return this;
 	}	

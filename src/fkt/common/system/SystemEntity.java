@@ -6,6 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import fkt.common.component.AComponent;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumState;
 
 public class SystemEntity {
 	private static final SystemEntity INSTANCE = new SystemEntity();
@@ -13,6 +14,10 @@ public class SystemEntity {
 	public SystemEntity ConstructEntity(AEntity entity, UUID uuid, AComponent[] components) {
 		this.SetUUID(entity, uuid);
 		this.SetComponents(entity, components);
+
+		if(SystemState.GetInstance().HasComponent(entity)) {
+			SystemState.GetInstance().SetDefaultState(entity, EnumState.NORMAL);
+		}
 		
 		return this;
 	}

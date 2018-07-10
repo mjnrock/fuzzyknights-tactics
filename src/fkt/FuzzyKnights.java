@@ -12,7 +12,7 @@ public class FuzzyKnights {
 	private static FuzzyKnights INSTANCE = new FuzzyKnights();
 	
 	public static void main(String[] args) throws InvalidStateDurationException, InterruptedException {
-		
+		Helper.cout("Sup.");
 	}
 	
 	public static FuzzyKnights GetInstance() {

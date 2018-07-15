@@ -2,7 +2,9 @@ package fkt.utility;
 
 import fkt.common.enums.EnumAttributeType;
 
-public class BoundedValue extends Value {
+public class Attribute {
+	public EnumAttributeType Attribute;
+	protected double Current;
 	public double Min;
 	public double Max;
 	
@@ -13,25 +15,22 @@ public class BoundedValue extends Value {
 	 * @param <double> min
 	 * @param <double> max
 	 */
-	public BoundedValue(EnumAttributeType attribute, double current, double min, double max) {
-		super(attribute, current);
-
+	public Attribute(EnumAttributeType attribute, double current, double min, double max) {
+		this.Attribute = attribute;
+		this.Current = current;
 		this.Min = min;
 		this.Max = max;
 	}
 	
-	@Override
 	public double GetCurrent() {
 		return this.Current;
 	}
-	@Override
-	public BoundedValue SetCurrent(double current) {
+	public Attribute SetCurrent(double current) {
 		this.Current = Helper.clamp(current, this.Min, this.Max);
 		
 		return this;
 	}
-
-	public BoundedValue AddCurrent(double amount) {
+	public Attribute AddCurrent(double amount) {
 		this.Current = Helper.clamp(this.Current + amount, this.Min, this.Max);
 		
 		return this;

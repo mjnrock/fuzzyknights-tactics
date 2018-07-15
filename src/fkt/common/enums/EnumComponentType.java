@@ -7,6 +7,7 @@ public enum EnumComponentType {
 	RESOURCES,
 	STATE,
 	LEVEL,
+	CURRENCY,
 	AI;
 	
 	public int GetFlag() {

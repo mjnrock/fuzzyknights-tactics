@@ -4,7 +4,7 @@ import fkt.common.component.ComponentAttributes;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumAttributeType;
 import fkt.common.enums.EnumComponentType;
-import fkt.utility.BoundedValue;
+import fkt.utility.Attribute;
 
 public class SystemAttributes {
 	private static final SystemAttributes INSTANCE = new SystemAttributes();
@@ -14,8 +14,8 @@ public class SystemAttributes {
 		return (ComponentAttributes)SystemEntity.GetInstance().GetComponent(entity, SystemAttributes.COMPONENT_TYPE);
 	}
 	
-	public BoundedValue GetAttribute(AEntity entity, EnumAttributeType attr) {
-		return (BoundedValue)this.GetComponent(entity).Attributes.get(attr);
+	public Attribute GetAttribute(AEntity entity, EnumAttributeType attr) {
+		return (Attribute)this.GetComponent(entity).Attributes.get(attr);
 	}
 	
 

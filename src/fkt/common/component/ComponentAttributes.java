@@ -3,22 +3,21 @@ package fkt.common.component;
 import java.util.concurrent.ConcurrentHashMap;
 
 import fkt.common.enums.EnumComponentType;
-import fkt.utility.BoundedValue;
-import fkt.utility.Value;
+import fkt.utility.Attribute;
 import fkt.common.enums.EnumAttributeType;
 
 public class ComponentAttributes extends AComponent {
-	public ConcurrentHashMap<EnumAttributeType, Value> Attributes = new ConcurrentHashMap<EnumAttributeType, Value>();
+	public ConcurrentHashMap<EnumAttributeType, Attribute> Attributes = new ConcurrentHashMap<EnumAttributeType, Attribute>();
 	
 	public ComponentAttributes(EnumAttributeType attributeType, int current, int min, int max) {
 		super(EnumComponentType.ATTRIBUTES);
 
-		this.Attributes.put(attributeType, new BoundedValue(attributeType, current, min, max));
+		this.Attributes.put(attributeType, new Attribute(attributeType, current, min, max));
 	}
 	public ComponentAttributes(EnumAttributeType attributeType, int current) {
 		super(EnumComponentType.ATTRIBUTES);
 
-		this.Attributes.put(attributeType, new BoundedValue(attributeType, current, 0, current));
+		this.Attributes.put(attributeType, new Attribute(attributeType, current, 0, current));
 	}
 
 	/**
@@ -38,7 +37,7 @@ public class ComponentAttributes extends AComponent {
 			if(attribute.length == 2) {
 				this.Attributes.put(
 					(EnumAttributeType)attribute[0],
-					new BoundedValue(
+					new Attribute(
 						(EnumAttributeType)attribute[0],
 						Double.valueOf(attribute[1].toString()),
 						0,
@@ -48,7 +47,7 @@ public class ComponentAttributes extends AComponent {
 			} else if(attribute.length == 4) { 
 				this.Attributes.put(
 					(EnumAttributeType)attribute[0],
-					new BoundedValue(
+					new Attribute(
 						(EnumAttributeType)attribute[0],
 						Double.valueOf(attribute[1].toString()),
 						Double.valueOf(attribute[2].toString()),
@@ -58,7 +57,7 @@ public class ComponentAttributes extends AComponent {
 			}
 		}
 	}
-	public ComponentAttributes(ConcurrentHashMap<EnumAttributeType, Value> attributes) {
+	public ComponentAttributes(ConcurrentHashMap<EnumAttributeType, Attribute> attributes) {
 		super(EnumComponentType.ATTRIBUTES);
 		
 		this.Attributes = attributes;

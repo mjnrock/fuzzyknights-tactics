@@ -13,8 +13,8 @@ public class EntityCat extends AEntity {
 		super(new AComponent[] {
 			new ComponentName("entity-living", name),
 			new ComponentAttributes(new Object[][] {
-				{ EnumAttributeType.HEALTH, 10 },
-				{ EnumAttributeType.MANA, 5 },
+				{ EnumAttributeType.HEALTH, 8, 10 },
+				{ EnumAttributeType.MANA, 4, 5 },
 				
 				{ EnumAttributeType.STRENGTH, 4 },
 				{ EnumAttributeType.TOUGHNESS, 1 },

@@ -57,22 +57,29 @@ public class ComponentAttributes extends AComponent {
 					(EnumAttributeType)attribute[0],
 					new Attribute(
 						(EnumAttributeType)attribute[0],
-						Double.valueOf(attribute[1].toString()),
-						0,
 						Double.valueOf(attribute[1].toString())
 					)
 				);
-			} else if(attribute.length == 4) { 
+			} else if(attribute.length == 3) { 
 				this.Attributes.put(
 					(EnumAttributeType)attribute[0],
 					new Attribute(
 						(EnumAttributeType)attribute[0],
 						Double.valueOf(attribute[1].toString()),
-						Double.valueOf(attribute[2].toString()),
-						Double.valueOf(attribute[3].toString())
+						Double.valueOf(attribute[2].toString())
 					)
 				);
-			}
+			} else if(attribute.length == 4) { 
+				this.Attributes.put(
+						(EnumAttributeType)attribute[0],
+						new Attribute(
+							(EnumAttributeType)attribute[0],
+							Double.valueOf(attribute[1].toString()),
+							Double.valueOf(attribute[2].toString()),
+							Double.valueOf(attribute[3].toString())
+						)
+					);
+				}
 		}
 	}
 }

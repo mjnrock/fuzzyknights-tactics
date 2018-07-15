@@ -7,7 +7,14 @@ public enum EnumAttributeType {
 	STRENGTH("STR", "Strength", EnumDiscipline.PHYSICAL),
 	TOUGHNESS("TGH", "Toughness", EnumDiscipline.PHYSICAL),
 	POWER("PWR", "Power", EnumDiscipline.MAGICAL),
-	RESISTANCE("RES", "Resistance", EnumDiscipline.MAGICAL);
+	RESISTANCE("RES", "Resistance", EnumDiscipline.MAGICAL),
+	
+	HIT("H%", "Hit", EnumDiscipline.HYBRID),
+	CRIT_HIT("C%", "Critical Hit", EnumDiscipline.HYBRID),
+	CRIT_DAMAGE("CD", "Critical Damage", EnumDiscipline.HYBRID),
+	
+	GOLD_FIND("GF", "Gold Find", EnumDiscipline.NONE),
+	MAGIC_FIND("MF", "Magical Find", EnumDiscipline.NONE);
 
 	private final String Code;
 	private final String Label;

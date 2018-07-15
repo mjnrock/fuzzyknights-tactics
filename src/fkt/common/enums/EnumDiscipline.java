@@ -1,6 +1,7 @@
 package fkt.common.enums;
 
 public enum EnumDiscipline {
+	NONE,		// Functionally an internal flag, as this should only be present on, like, meta-level stuff.
 	PHYSICAL,
 	MAGICAL,
 	HYBRID;

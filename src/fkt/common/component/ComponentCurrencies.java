@@ -5,13 +5,20 @@ import java.util.concurrent.ConcurrentHashMap;
 import fkt.common.enums.EnumComponentType;
 import fkt.common.enums.EnumCurrencyType;
 
-public class ComponentCurrency extends AComponent {
+public class ComponentCurrencies extends AComponent {
 	public ConcurrentHashMap<EnumCurrencyType, Double> Currencies = new ConcurrentHashMap<EnumCurrencyType, Double>();
 	
-	public ComponentCurrency(EnumCurrencyType currencyType, double amount) {
-		super(EnumComponentType.CURRENCY);
+	public ComponentCurrencies(EnumCurrencyType currencyType, double amount) {
+		this();
 
 		this.Currencies.put(currencyType, amount);
+	}
+	public ComponentCurrencies() {
+		super(EnumComponentType.CURRENCY);
+		
+		for(EnumCurrencyType curr : EnumCurrencyType.values()) {
+			this.Currencies.put(curr, 0D);
+		}
 	}
 
 	/**
@@ -24,7 +31,7 @@ public class ComponentCurrency extends AComponent {
 	 * 
 	 * @param Object[][] currencies
 	 */
-	public ComponentCurrency(Object[][] currencies){
+	public ComponentCurrencies(Object[][] currencies){
 		super(EnumComponentType.CURRENCY);
 		
 		for(Object[] currency : currencies) {
@@ -34,7 +41,7 @@ public class ComponentCurrency extends AComponent {
 			);
 		}
 	}
-	public ComponentCurrency(ConcurrentHashMap<EnumCurrencyType, Double> currencies) {
+	public ComponentCurrencies(ConcurrentHashMap<EnumCurrencyType, Double> currencies) {
 		super(EnumComponentType.CURRENCY);
 		
 		this.Currencies = currencies;

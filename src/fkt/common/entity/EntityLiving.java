@@ -2,14 +2,16 @@ package fkt.common.entity;
 
 import fkt.common.component.AComponent;
 import fkt.common.component.ComponentAttributes;
+import fkt.common.component.ComponentCurrencies;
+import fkt.common.component.ComponentLevel;
 import fkt.common.component.ComponentName;
 import fkt.common.component.ComponentState;
 import fkt.common.enums.EnumAttributeType;
 
-public class EntityCat extends AEntity {
-	public EntityCat(String name) {
+public class EntityLiving extends AEntity {
+	public EntityLiving(String name) {
 		super(new AComponent[] {
-			new ComponentName("entity-cat", name),
+			new ComponentName("entity-living", name),
 			new ComponentAttributes(new Object[][] {
 				{ EnumAttributeType.HEALTH, 10 },
 				{ EnumAttributeType.MANA, 5 },
@@ -19,10 +21,12 @@ public class EntityCat extends AEntity {
 				{ EnumAttributeType.POWER, 2 },
 				{ EnumAttributeType.RESISTANCE, 3 }
 			}),			
-			new ComponentState()
+			new ComponentState(),
+			new ComponentLevel(),
+			new ComponentCurrencies()
 		});
 	}
-	public EntityCat() {
+	public EntityLiving() {
 		this(null);
 	}
 }

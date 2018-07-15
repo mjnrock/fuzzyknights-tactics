@@ -14,4 +14,7 @@ public class ComponentLevel extends AComponent {
 	public ComponentLevel(int current) {
 		this(1, current, 0);
 	}
+	public ComponentLevel() {
+		this(1, 0, 0);
+	}
 }

@@ -6,6 +6,7 @@ public enum EnumComponentType {
 	HEALTH,
 	RESOURCES,
 	STATE,
+	LEVEL,
 	AI;
 	
 	public int GetFlag() {

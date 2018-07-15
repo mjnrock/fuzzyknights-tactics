@@ -30,4 +30,10 @@ public class BoundedValue extends Value {
 		
 		return this;
 	}
+
+	public BoundedValue AddCurrent(double amount) {
+		this.Current = Helper.clamp(this.Current + amount, this.Min, this.Max);
+		
+		return this;
+	}
 }

@@ -8,8 +8,8 @@ import fkt.common.component.ComponentName;
 import fkt.common.component.ComponentState;
 import fkt.common.enums.EnumAttributeType;
 
-public class EntityLiving extends AEntity {
-	public EntityLiving(String name) {
+public class EntityCat extends AEntity {
+	public EntityCat(String name) {
 		super(new AComponent[] {
 			new ComponentName("entity-living", name),
 			new ComponentAttributes(new Object[][] {
@@ -26,7 +26,7 @@ public class EntityLiving extends AEntity {
 			new ComponentCurrencies()
 		});
 	}
-	public EntityLiving() {
+	public EntityCat() {
 		this(null);
 	}
 }

@@ -7,6 +7,7 @@ import fkt.common.enums.EnumCurrencyType;
 
 public class ComponentCurrencies extends AComponent {
 	public ConcurrentHashMap<EnumCurrencyType, Double> Currencies = new ConcurrentHashMap<EnumCurrencyType, Double>();
+	public ConcurrentHashMap<EnumCurrencyType, Double> Bank = new ConcurrentHashMap<EnumCurrencyType, Double>();
 	
 	public ComponentCurrencies(EnumCurrencyType currencyType, double amount) {
 		this();
@@ -18,6 +19,7 @@ public class ComponentCurrencies extends AComponent {
 		
 		for(EnumCurrencyType curr : EnumCurrencyType.values()) {
 			this.Currencies.put(curr, 0D);
+			this.Bank.put(curr, 0D);
 		}
 	}
 

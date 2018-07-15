@@ -10,7 +10,7 @@ import org.junit.rules.ExpectedException;
 
 import fkt.FuzzyKnights;
 import fkt.common.entity.AEntity;
-import fkt.common.entity.EntityLiving;
+import fkt.common.entity.EntityCat;
 import fkt.common.enums.EnumState;
 import fkt.common.exceptions.InvalidStateDurationException;
 import fkt.common.system.SystemState;
@@ -22,7 +22,7 @@ public class SystemStateTests {
 	@Before
     public void Init() throws Exception {
 		FK = FuzzyKnights.GetInstance();
-		Entity = new EntityLiving();
+		Entity = new EntityCat();
 	}	
 	
 	@Rule

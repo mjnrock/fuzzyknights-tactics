@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import fkt.common.component.AComponent;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.events.EntityEvents;
 import fkt.common.system.SystemEntity;
 
 public abstract class AEntity {
@@ -13,6 +14,8 @@ public abstract class AEntity {
 	
 	public AEntity(UUID uuid, AComponent[] components) {
 		SystemEntity.GetInstance().ConstructEntity(this, uuid, components);
+		
+		EntityEvents.GetInstance().EntityConstruction(this);
 	}
 	public AEntity(AComponent[] components) {
 		this(java.util.UUID.randomUUID(), components);

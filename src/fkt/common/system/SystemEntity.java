@@ -6,15 +6,23 @@ import java.util.concurrent.ConcurrentHashMap;
 import fkt.common.component.AComponent;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumEvents;
 import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumState;
 import fkt.common.message.AMessage;
+import fkt.utility.KeyValue;
 
 public class SystemEntity implements IMessageable {
 	private static final SystemEntity INSTANCE = new SystemEntity();
+	@SuppressWarnings("rawtypes")
 	@Override
 	public SystemEntity ReceiveMessage(AMessage message) {
-		//TODO Process the Message
+		EnumEvents event = (EnumEvents)((KeyValue)message.GetPayload()).getKey();
+		
+		switch(event) {
+			case EntityConstruction:
+				break;
+		}
 		
 		this.MarkAsCompleted(message);
 		return this;

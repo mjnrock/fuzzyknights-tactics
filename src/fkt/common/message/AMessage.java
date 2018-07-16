@@ -5,7 +5,7 @@ import java.util.UUID;
 import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumMessageType;
 
-public class AMessage {
+public abstract class AMessage {
 	public final UUID uuid = UUID.randomUUID();
 	protected EnumMessageState State = EnumMessageState.PENDING;
 	protected EnumMessageType MessageType;

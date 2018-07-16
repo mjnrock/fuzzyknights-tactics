@@ -6,11 +6,26 @@ import java.util.concurrent.ConcurrentHashMap;
 import fkt.common.component.AComponent;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumState;
+import fkt.common.message.AMessage;
 
-public class SystemEntity {
+public class SystemEntity implements IMessageable {
 	private static final SystemEntity INSTANCE = new SystemEntity();
-	
+	@Override
+	public SystemEntity ReceiveMessage(AMessage message) {
+		//TODO Process the Message
+		
+		this.MarkAsCompleted(message);
+		return this;
+	}
+	@Override
+	public SystemEntity MarkAsCompleted(AMessage message) {
+		message.SetState(EnumMessageState.COMPLETED);
+		
+		return this;
+	}
+		
 	public SystemEntity ConstructEntity(AEntity entity, UUID uuid, AComponent[] components) {
 		this.SetUUID(entity, uuid);
 		this.SetComponents(entity, components);
@@ -58,10 +73,10 @@ public class SystemEntity {
 		return this;
 	}
 
-	public AComponent GetComponent(AEntity entity, EnumComponentType type) {
+	public AComponent GetEntityComponent(AEntity entity, EnumComponentType type) {
 		return entity.Components.get(type);
 	}
-	public SystemEntity SetComponent(AEntity entity, AComponent component) {
+	public SystemEntity SetEntityComponent(AEntity entity, AComponent component) {
 		entity.Components.put(component.GetComponentType(), component);
 		
 		return this;

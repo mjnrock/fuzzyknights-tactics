@@ -3,13 +3,30 @@ package fkt.common.system;
 import fkt.common.component.ComponentLevel;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumMessageState;
+import fkt.common.message.AMessage;
 
-public class SystemLevel {
+public class SystemLevel implements IMessageable, IComponentSystem {
 	private static final SystemLevel INSTANCE = new SystemLevel();
 	protected static final EnumComponentType COMPONENT_TYPE = EnumComponentType.LEVEL;
 
+	@Override
+	public SystemLevel ReceiveMessage(AMessage message) {
+		//TODO Process the Message
+		
+		this.MarkAsCompleted(message);
+		return this;
+	}
+	@Override
+	public SystemLevel MarkAsCompleted(AMessage message) {
+		message.SetState(EnumMessageState.COMPLETED);
+		
+		return this;
+	}
+
+	@Override
 	public ComponentLevel GetComponent(AEntity entity) {
-		return (ComponentLevel)SystemEntity.GetInstance().GetComponent(entity, SystemLevel.COMPONENT_TYPE);
+		return (ComponentLevel)SystemEntity.GetInstance().GetEntityComponent(entity, SystemLevel.COMPONENT_TYPE);
 	}
 	
 	

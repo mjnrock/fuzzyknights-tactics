@@ -4,14 +4,31 @@ import fkt.common.component.ComponentAttributes;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumAttributeType;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumMessageState;
+import fkt.common.message.AMessage;
 import fkt.utility.Attribute;
 
-public class SystemAttributes {
+public class SystemAttributes implements IMessageable, IComponentSystem {
 	private static final SystemAttributes INSTANCE = new SystemAttributes();
 	protected static final EnumComponentType COMPONENT_TYPE = EnumComponentType.ATTRIBUTES;
 
+	@Override
+	public SystemAttributes ReceiveMessage(AMessage message) {
+		//TODO Process the Message
+		
+		this.MarkAsCompleted(message);
+		return this;
+	}
+	@Override
+	public SystemAttributes MarkAsCompleted(AMessage message) {
+		message.SetState(EnumMessageState.COMPLETED);
+		
+		return this;
+	}
+	
+	@Override
 	public ComponentAttributes GetComponent(AEntity entity) {
-		return (ComponentAttributes)SystemEntity.GetInstance().GetComponent(entity, SystemAttributes.COMPONENT_TYPE);
+		return (ComponentAttributes)SystemEntity.GetInstance().GetEntityComponent(entity, SystemAttributes.COMPONENT_TYPE);
 	}
 	
 	public Attribute GetAttribute(AEntity entity, EnumAttributeType attr) {

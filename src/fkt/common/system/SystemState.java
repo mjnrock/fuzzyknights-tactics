@@ -6,20 +6,38 @@ import java.util.concurrent.ConcurrentHashMap;
 import fkt.common.component.ComponentState;
 import fkt.common.entity.AEntity;
 import fkt.common.enums.EnumComponentType;
+import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumState;
 import fkt.common.exceptions.InvalidStateDurationException;
+import fkt.common.message.AMessage;
 
-public class SystemState {
+public class SystemState implements IMessageable, IComponentSystem {
 	private static final SystemState INSTANCE = new SystemState();
 	protected static final EnumComponentType COMPONENT_TYPE = EnumComponentType.STATE;
 
 	public static final long DURATION_MAX = 3600000;	// 1hr in milliseconds
+
+	@Override
+	public SystemState ReceiveMessage(AMessage message) {
+		//TODO Process the Message
+		
+		this.MarkAsCompleted(message);
+		return this;
+	}
+	@Override
+	public SystemState MarkAsCompleted(AMessage message) {
+		message.SetState(EnumMessageState.COMPLETED);
+		
+		return this;
+	}
+
+	@Override
+	public ComponentState GetComponent(AEntity entity) {
+		return (ComponentState)SystemEntity.GetInstance().GetEntityComponent(entity, SystemState.COMPONENT_TYPE);
+	}
 	
 	public boolean HasComponent(AEntity entity) {
 		return SystemEntity.GetInstance().GetComponents(entity).containsKey(SystemState.COMPONENT_TYPE);
-	}
-	public ComponentState GetComponent(AEntity entity) {
-		return (ComponentState)SystemEntity.GetInstance().GetComponent(entity, SystemState.COMPONENT_TYPE);
 	}
 	public SystemState AddComponent(AEntity entity, ComponentState state) {
 		if(!this.HasComponent(entity)) {

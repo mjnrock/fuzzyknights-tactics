@@ -10,22 +10,30 @@ import fkt.common.enums.EnumEvents;
 import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumState;
 import fkt.common.message.AMessage;
-import fkt.utility.Helper;
-import fkt.utility.KeyValue;
+import fkt.common.message.IEventMessage;
 
 public class SystemEntity implements IMessageable {
 	private static final SystemEntity INSTANCE = new SystemEntity();
 	@Override
 	public SystemEntity ReceiveMessage(AMessage message) {
-		Helper.cout(message);
+		EnumEvents event = this.GetMessageEvent((IEventMessage) message);
 		
-//		switch(event) {
-//			case EntityConstruction:
-//				break;
-//		}
+		switch(event) {
+			case EntityConstruction:
+				break;
+			case EntityJoinedNode:
+				break;
+			case EntityLeftNode:
+				break;
+			default:
+				break;
+		}
 		
 		this.MarkAsCompleted(message);
 		return this;
+	}
+	public EnumEvents GetMessageEvent(IEventMessage message) {
+		return message.GetEvent();
 	}
 	@Override
 	public SystemEntity MarkAsCompleted(AMessage message) {

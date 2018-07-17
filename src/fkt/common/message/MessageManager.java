@@ -35,19 +35,19 @@ public class MessageManager {
 	
 	public MessageManager Route(AMessage message) {
 		switch(message.MessageType) {
-			case ATTRIBUTES:
+			case SystemAttributes:
 				SystemAttributes.GetInstance().ReceiveMessage(message);
 				break;				
-			case ENTITY:
+			case SystemEntity:
 				SystemEntity.GetInstance().ReceiveMessage(message);
 				break;
-			case LEVEL:
+			case SystemLevel:
 				SystemLevel.GetInstance().ReceiveMessage(message);
 				break;
-			case NAME:
+			case SystemName:
 				SystemName.GetInstance().ReceiveMessage(message);
 				break;
-			case STATE:
+			case SystemState:
 				SystemState.GetInstance().ReceiveMessage(message);
 				break;
 			default:

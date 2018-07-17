@@ -10,14 +10,12 @@ import fkt.common.enums.EnumMessageType;
 import fkt.common.message.AMessage;
 
 public class EntityConstructionMessage extends AMessage {
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public EntityConstructionMessage(AEntity entity) {
-		super(EnumMessageType.ENTITY);
+		super(EnumMessageType.SystemEntity);
 
-		ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>() {{
-			put("Event", EnumEvents.EntityConstruction);
-			put("Entity", entity);
-		}};
+		ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>();
+		map.put("Event", EnumEvents.EntityConstruction);
+		map.put("Entity", entity);
 		
 		this.SetPayload((new Gson()).toJson(map));
 	}

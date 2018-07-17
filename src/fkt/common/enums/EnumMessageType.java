@@ -1,11 +1,11 @@
 package fkt.common.enums;
 
 public enum EnumMessageType {
-	ATTRIBUTES,
-	ENTITY,
-	LEVEL,
-	NAME,
-	STATE;
+	SystemAttributes,
+	SystemEntity,
+	SystemLevel,
+	SystemName,
+	SystemState;
 	
 	public int GetFlag() {
 		return 1 << this.ordinal();

@@ -6,6 +6,7 @@ import fkt.common.exceptions.InvalidStateDurationException;
 import fkt.common.message.AMessage;
 import fkt.common.message.MessageManager;
 import fkt.common.message.entity.EntityConstructionMessage;
+import fkt.utility.Map;
 import fkt.utility.Grid;
 import fkt.utility.Helper;
 
@@ -22,7 +23,8 @@ public class FuzzyKnights {
 
 		MessageManager.GetInstance().Dispatch();
 		
-//		Grid grid = new Grid(5, 5);
+		Grid grid = new Grid(5, 5);
+//		Helper.cout(grid);
 //		grid.GetNode(1, 2).AddEntity(e1);
 //		Helper.cout(grid.GetNode(1, 2).HasEntity(e1));
 //		Helper.cout(grid);

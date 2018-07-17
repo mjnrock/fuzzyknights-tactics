@@ -11,15 +11,13 @@ import fkt.common.message.AMessage;
 import fkt.utility.Node;
 
 public class EntityLeftNodeMessage extends AMessage {
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public EntityLeftNodeMessage(Node node, AEntity entity) {
-		super(EnumMessageType.ENTITY);
+		super(EnumMessageType.SystemEntity);
 
-		ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>() {{
-			put("Event", EnumEvents.EntityLeftNode);
-			put("Node", node);
-			put("Entity", entity);
-		}};
+		ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<String, Object>();
+		map.put("Event", EnumEvents.EntityLeftNode);
+		map.put("Node", node);
+		map.put("Entity", entity);
 		
 		this.SetPayload((new Gson()).toJson(map));
 	}

@@ -10,19 +10,19 @@ import fkt.common.enums.EnumEvents;
 import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumState;
 import fkt.common.message.AMessage;
+import fkt.utility.Helper;
 import fkt.utility.KeyValue;
 
 public class SystemEntity implements IMessageable {
 	private static final SystemEntity INSTANCE = new SystemEntity();
-	@SuppressWarnings("rawtypes")
 	@Override
 	public SystemEntity ReceiveMessage(AMessage message) {
-		EnumEvents event = (EnumEvents)((KeyValue)message.GetPayload()).getKey();
+		Helper.cout(message);
 		
-		switch(event) {
-			case EntityConstruction:
-				break;
-		}
+//		switch(event) {
+//			case EntityConstruction:
+//				break;
+//		}
 		
 		this.MarkAsCompleted(message);
 		return this;

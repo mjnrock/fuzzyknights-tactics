@@ -1,7 +1,9 @@
 package fkt.common.enums;
 
 public enum EnumEvents {
-	EntityConstruction;
+	EntityConstruction,
+	EntityJoinedNode,
+	EntityLeftNode;
 
 	public static EnumEvents fromString(String text) {
 		for (EnumEvents b : EnumEvents.values()) {

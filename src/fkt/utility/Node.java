@@ -5,6 +5,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 import fkt.common.entity.AEntity;
+import fkt.common.events.EntityEvents;
 
 public class Node {
 	public final int X;
@@ -43,15 +44,21 @@ public class Node {
 	public Node AddEntity(AEntity entity) {
 		this.Entities.put(entity.UUID, entity);
 		
+		EntityEvents.GetInstance().EntityJoinedNode(this, entity);
+		
 		return this;
 	}
 	public Node RemoveEntity(UUID uuid) {
-		this.Entities.remove(uuid);
+		AEntity entity = this.Entities.remove(uuid);
+		
+		EntityEvents.GetInstance().EntityLeftNode(this, entity);
 		
 		return this;
 	}
 	public Node RemoveEntity(AEntity entity) {
 		this.Entities.remove(entity.UUID);
+		
+		EntityEvents.GetInstance().EntityLeftNode(this, entity);
 		
 		return this;
 	}

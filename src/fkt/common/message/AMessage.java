@@ -2,6 +2,8 @@ package fkt.common.message;
 
 import java.util.UUID;
 
+import com.google.gson.Gson;
+
 import fkt.common.enums.EnumMessageState;
 import fkt.common.enums.EnumMessageType;
 
@@ -9,12 +11,15 @@ public abstract class AMessage {
 	public final UUID uuid = UUID.randomUUID();
 	protected EnumMessageState State = EnumMessageState.PENDING;
 	protected EnumMessageType MessageType;
-	protected Object Payload;
+	protected String Payload;
 	protected boolean IsClientOrigin = true;
-	
-	public AMessage(EnumMessageType type, Object payload) {
+
+	public AMessage(EnumMessageType type, String payload) {
 		this.SetMessageType(type);
 		this.SetPayload(payload);
+	}
+	public AMessage(EnumMessageType type) {
+		this.SetMessageType(type);
 	}
 	
 	public EnumMessageState GetState() {
@@ -38,7 +43,7 @@ public abstract class AMessage {
 	public Object GetPayload() {
 		return this.Payload;
 	}
-	public AMessage SetPayload(Object payload) {
+	public AMessage SetPayload(String payload) {
 		this.Payload = payload;
 		
 		return this;

@@ -4,8 +4,8 @@ import fkt.common.entity.EntityCat;
 import fkt.common.enums.EnumMessageType;
 import fkt.common.exceptions.InvalidStateDurationException;
 import fkt.common.message.AMessage;
-import fkt.common.message.EntityMessage;
 import fkt.common.message.MessageManager;
+import fkt.common.message.entity.EntityConstructionMessage;
 import fkt.utility.Grid;
 import fkt.utility.Helper;
 

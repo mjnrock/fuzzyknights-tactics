@@ -1,25 +1,18 @@
 package fkt.utility;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import fkt.common.entity.AEntity;
-
 public class Grid<T> {
 	protected int Width;
 	protected int Height;
-	protected ArrayList<T>[][] Grid;
-	
-	protected final HashMap<AEntity, Object> EntityManager = new HashMap<AEntity, Object>();
+	protected T[][] Grid;
 	
 	public Grid(int width, int height) {
 		this.Width = width;
 		this.Height = height;
 		
-		this.Grid = new ArrayList[width][height];
+		this.Grid = (T[][]) new Object[width][height];
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
-				this.Grid[i][j] = (ArrayList<T>)null;
+				this.Grid[i][j] = null;
 			}
 		}
 	}
@@ -34,7 +27,12 @@ public class Grid<T> {
 		return this.Width * this.Height;
 	}
 
-	public ArrayList<T> GetNode(int x, int y) {
-		return this.Grid[x][y];
+	public T GetNode(int x, int y) {
+		return (T) this.Grid[x][y];
+	}
+	public Grid<T> SetNode(int x, int y, T value) {
+		this.Grid[x][y] = value;
+		
+		return this;
 	}
 }

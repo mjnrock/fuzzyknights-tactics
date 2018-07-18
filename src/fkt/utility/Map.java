@@ -5,9 +5,9 @@ import java.util.HashMap;
 import fkt.common.entity.AEntity;
 
 public class Map {
-	protected int Width;
-	protected int Height;
-	protected Node[][] Grid;
+	protected final int Width;
+	protected final int Height;
+	protected final Grid<Node> Grid;
 	
 	protected final HashMap<AEntity, Object> EntityManager = new HashMap<AEntity, Object>();
 	
@@ -15,10 +15,10 @@ public class Map {
 		this.Width = width;
 		this.Height = height;
 		
-		this.Grid = new Node[width][height];
+		this.Grid = new Grid<Node>(width, height);
 		for(int i = 0; i < height; i++) {
 			for(int j = 0; j < width; j++) {
-				this.Grid[i][j] = new Node(i, j);
+				this.Grid.SetNode(i, j, new Node(i, j));
 			}
 		}
 	}
@@ -34,7 +34,7 @@ public class Map {
 	}
 
 	public Node GetNode(int x, int y) {
-		return this.Grid[x][y];
+		return this.Grid.GetNode(x, y);
 	}
 
 	public Map MoveEntity(AEntity entity, int x0, int y0, int x1, int y1) {

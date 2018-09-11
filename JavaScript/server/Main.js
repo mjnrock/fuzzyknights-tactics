@@ -22,5 +22,5 @@ Router(app, {
 });
 
 app.listen(PORT, () => {
-	console.log(`Hangtime Graph API is now listening on port: ${PORT}`);
+	console.log(`FuzzyKnight Tactics API is now listening on port: ${PORT}`);
 });

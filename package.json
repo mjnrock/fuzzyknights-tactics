@@ -1,0 +1,19 @@
+{
+  "name": "fuzzyknights-tactics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjnrock/fuzzyknights-tactics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjnrock/fuzzyknights-tactics/issues"
+  },
+  "homepage": "https://github.com/mjnrock/fuzzyknights-tactics#readme"
+}

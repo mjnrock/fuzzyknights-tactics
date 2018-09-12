@@ -25,7 +25,7 @@ const router = (App, Drivers) => {
 
 	App.get("/validate", function (req, res) {
 		res.setHeader("Access-Control-Allow-Origin", "*");
-		res.status(200).send("This is a validation message from the Hangtime Graph API");
+		res.status(200).send("This is a validation message from the FuzzyKnights Graph API");
 	});
 
 	App.ws("/ws", function (client, req) {

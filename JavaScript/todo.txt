@@ -1,0 +1,24 @@
+======================================================================================================
+	Sprint 1
+======================================================================================================
+Create a WebSocket sharing event where a client can send a data packet and all clients receive it
+------------------------------------------------------------------------------------------------------
+[] Serve "index.html" from the Express server
+[] Create browser-based client that can launch the FuzzyKnightsClient.js
+	-	[] List of packet payload data
+	-	[] Clicking a button broadcasts a packet
+	-	[] Packet paylods in list show a "Sent" or "Received" flag for debugging
+[] Create Messages
+	-	[] IsServerOrigin flag for task delegation and validation/overrides
+	-	[] Create categories
+		-	[] Control (e.g. Mouse, Keyboard)
+		-	[] Entity
+		-	[] Component
+		-	[] World
+		-	[] Chat
+[] Create Packets
+	-	[] Make a child class of Message that adds ToServer/ToClient/Broadcast data
+[] Create MessageManager that handles all incoming and outgoing messages
+[] Create PacketManager that handles all incoming and outgoing packets
+[] Create routing functions in WebSocket Server to push and receive from clients
+	-	[] Abstract these out into methods within the PacketManager
